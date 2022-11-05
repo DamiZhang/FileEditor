@@ -7,8 +7,8 @@ public class FileGUI implements ActionListener {
     FileEditor fileEditor = new FileEditor();
     //Create all the elements in the GUI
     static JTextField field;
-    static JFrame frame;
-    static JPanel panel;
+static JFrame frame;
+static JPanel panel;
     static JLabel lable_top_left,lable_instream,lable_top_right;
     static JButton button1, button2;
     static JTextArea area1, area2;
@@ -47,10 +47,12 @@ public class FileGUI implements ActionListener {
 
 
 
-        frame.setLayout(null);frame.add(panel);
+
+
+
         frame.setLayout(null);
         frame.setSize(900,900);
-        frame.setResizable(false);//Set size
+        frame.setResizable(false);
         frame.setVisible(true);
         frame.add(lable_top_left);
         frame.add(lable_instream);
@@ -76,7 +78,9 @@ public class FileGUI implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String fileName = field.getText();
         if(e.getSource() == button1){
-            fileEditor.readbox("C:\\Users\\DELL\\IdeaProjects\\TextFile\\src\\annual.csv",area1);
+            //initialize the text box to receive the lines from the file
+            area1.setText("");
+            fileEditor.readbox("C:\\Users\\DELL\\IdeaProjects\\FileEditor\\src\\annual.csv",area1);
             //call directly to where the file is located
         }
         if(e.getSource() == button2){
